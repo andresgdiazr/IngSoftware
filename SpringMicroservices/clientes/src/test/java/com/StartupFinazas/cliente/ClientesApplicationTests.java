@@ -1,10 +1,10 @@
-package com.pagodirecto.cliente;
+package com.StartupFinazas.cliente;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MicrosclienteApplicationTests {
+class ClientesApplicationTests {
 
 	@Test
 	void contextLoads() {

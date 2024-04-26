@@ -1,4 +1,4 @@
-package com.pagodirecto.cliente.entidades;
+package com.StartupFinazas.cliente.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,8 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-@Entity
 @Data
+@Entity
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,8 +15,7 @@ public class Cliente {
     private String ced;
     private String nombre;
     private String apellido;
+    private String telf;
     private String direccion;
-
-
 
 }

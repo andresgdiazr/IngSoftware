@@ -1,13 +1,13 @@
-package com.pagodirecto.cliente;
+package com.StartupFinazas.cliente;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicrosclienteApplication {
+public class ClientesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicrosclienteApplication.class, args);
+		SpringApplication.run(ClientesApplication.class, args);
 	}
 
 }
