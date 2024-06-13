@@ -11,6 +11,7 @@ import lombok.Data;
         private Integer id;
         private String location_Id;
         private String name;
+        @Column(name = "lastname")
         private String lastName;
         private String email;
         private String phone;
