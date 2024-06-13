@@ -9,7 +9,7 @@ import lombok.Data;
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "client_id_seq")
         @SequenceGenerator(name = "client_id_seq", sequenceName = "client_id_seq", allocationSize = 1)
         private Integer id;
-        private String location_Id;
+        private int location_Id;
         private String name;
         @Column(name = "lastname")
         private String lastName;

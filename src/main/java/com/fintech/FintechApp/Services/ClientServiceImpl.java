@@ -28,6 +28,6 @@ public class ClientServiceImpl implements IClientService{
 
     @Override
     public Optional<Client> findById(Long id) {
-        return null;
+        return clientRepository.findById(id);
     }
 }
