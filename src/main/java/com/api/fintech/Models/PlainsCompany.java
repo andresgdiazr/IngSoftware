@@ -1,0 +1,27 @@
+package com.api.fintech.Models;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.sql.Timestamp;
+
+@Data
+@Entity
+@Table(name = "plains_company", schema = "public")
+public class PlainsCompany {
+    @Id
+    private Integer id;
+
+    @Column(name = "plains_id", nullable = false)
+    private Integer plainsId;
+
+    @Column(name = "companies_id", nullable = false)
+    private Integer companiesId;
+
+    @Column(name = "created_at")
+    private Timestamp createdAt;
+
+    @Column(name = "status", length = 1)
+    private String status;
+
+}
