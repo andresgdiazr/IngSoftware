@@ -17,7 +17,6 @@ public class UsersControllers {
     @Autowired
     UserRepository userRepository;
 
-
     @GetMapping()
     public List<User> findAll(){
 
