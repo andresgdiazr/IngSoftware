@@ -9,8 +9,9 @@ import lombok.Data;
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_company")
-//    @SequenceGenerator(name = "company_id_seq", sequenceName = "company_id_seq", allocationSize = 1)
-    private Integer id;
+//    @SequenceGenerator(name = "seq_company", sequenceName = "company_id_seq", allocationSize = 1)
+    private Long id;
+
     @Column(name = "companies_id")
     private Integer companyId; // Assuming "companies_id" refers to a self-referential relationship
 
@@ -24,10 +25,10 @@ public class Company {
     private String name;
 
     @Column(name = "rif", length = 10, unique = true, nullable = false)
-    private String rif; // Assuming "rif" is a unique identifier
+    private String rif;
 
     @Column(name = "pass", length = 100)
-    private String password; // Assuming "pass" refers to the company's password
+    private String password;
 
     @Column(name = "email", length = 50)
     private String email;
@@ -37,24 +38,5 @@ public class Company {
 
     @Column(name = "status", length = 1)
     private String status;
-
-//    // ManyToOne relationships
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "location_id")
-//    private Location location;
-//
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "categorycomps_id")
-//    private CategoryComp categoryComp;
-
-    // Optional: ManyToMany relationship (assuming a separate table exists)
-    // @ManyToMany
-    // @JoinTable(name = "company_clients",
-    //            joinColumns = @JoinColumn(name = "company_id"),
-    //            inverseJoinColumns = @JoinColumn(name = "client_id"))
-    // private List<Client> clients;
-
-    // Getters and Setters (optional but recommended)
-    // ... (similar to the Client class)
 
 }
