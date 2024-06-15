@@ -39,12 +39,9 @@ public class ClientController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable long id, @RequestBody Client input) throws Exception {
-
         Optional<Client> optionalCliente = clientService.findById(id);
-
         if (optionalCliente.isPresent()) {
             Client cliente = optionalCliente.get();
-
             cliente.setCedula(input.getCedula());
             cliente.setName(input.getName());
             cliente.setLastName(input.getLastName());
@@ -53,14 +50,11 @@ public class ClientController {
             cliente.setPhone(input.getPhone());
             cliente.setStatus(input.getStatus());
             cliente.setLocationId(input.getLocationId());
-
-            Client salvar = clientService.crearCliente(cliente);
-
-            return new ResponseEntity<>(salvar, HttpStatus.OK);
+            Client updatedClient = clientService.actualizarCliente(cliente);
+            return new ResponseEntity<>(updatedClient, HttpStatus.OK);
         } else {
             return new ResponseEntity<>("Cliente no encontrado", HttpStatus.NOT_FOUND);
         }
-
     }
     @PostMapping("/create")
     public ResponseEntity<Client> agregarCliente(@RequestBody Client cliente) throws Exception {
