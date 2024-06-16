@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 public class DetailsInvoice {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_detinvoice")
+    @SequenceGenerator(name = "seq_detinvoice", sequenceName = "seq_detinvoice", allocationSize = 1)
+
     @Column(name = "id")
     private Integer id;
 

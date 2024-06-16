@@ -5,11 +5,11 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "user", schema = "readOnlySchema") // Specify the existing table name
+@Table(name = "users") // Specify the existing table name
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_user")
-//    @SequenceGenerator(name = "user_id_seq", sequenceName = "user_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "seq_user", sequenceName = "seq_user", allocationSize = 1)
     private long id;
     @Column(name = "name", length = 20, nullable = false)
     private String name;

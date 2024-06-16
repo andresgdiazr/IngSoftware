@@ -11,6 +11,8 @@ import java.sql.Timestamp;
 public class DetailsPlain {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_detplain")
+    @SequenceGenerator(name = "seq_detplain", sequenceName = "seq_detplain", allocationSize = 1)
+
     @Column(name = "id")
     private Integer id;
 

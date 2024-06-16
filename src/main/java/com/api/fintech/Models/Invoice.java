@@ -12,8 +12,10 @@ import java.sql.Timestamp;
 public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_invoice")
+    @SequenceGenerator(name = "seq_invoice", sequenceName = "seq_invoice", allocationSize = 1)
+
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "client_id", nullable = false)
     private Integer clientId;

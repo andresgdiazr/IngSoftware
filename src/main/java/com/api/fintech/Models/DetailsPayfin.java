@@ -12,6 +12,8 @@ import java.sql.Timestamp;
 public class DetailsPayfin {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_detpayfin")
+    @SequenceGenerator(name = "seq_detpayfin", sequenceName = "seq_detpayfin", allocationSize = 1)
+
     @Column(name = "id")
     private Integer id;
 

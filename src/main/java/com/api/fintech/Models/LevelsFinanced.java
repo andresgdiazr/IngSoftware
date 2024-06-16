@@ -9,6 +9,8 @@ import lombok.Data;
 public class LevelsFinanced {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_levelsfin")
+    @SequenceGenerator(name = "seq_levelsfin", sequenceName = "seq_levelsfin", allocationSize = 1)
+
     @Column(name = "id")
     private Integer id;
 

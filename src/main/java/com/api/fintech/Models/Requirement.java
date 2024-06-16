@@ -9,6 +9,8 @@ import lombok.Data;
 public class Requirement {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_requirements")
+    @SequenceGenerator(name = "seq_requirements", sequenceName = "seq_requirements", allocationSize = 1)
+
     @Column(name = "id")
     private Integer id;
 

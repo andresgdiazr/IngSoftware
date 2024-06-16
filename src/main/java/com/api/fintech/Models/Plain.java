@@ -9,6 +9,8 @@ import lombok.Data;
 public class Plain {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_plain")
+    @SequenceGenerator(name = "seq_plain", sequenceName = "seq_plain", allocationSize = 1)
+
     @Column(name = "id")
     private Integer id;
 

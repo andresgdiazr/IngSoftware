@@ -11,6 +11,8 @@ import java.sql.Timestamp;
 public class TokenComp {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_tokencomp")
+    @SequenceGenerator(name = "seq_tokencomp", sequenceName = "seq_tokencomp", allocationSize = 1)
+
     @Column(name = "id")
     private Integer id;
 

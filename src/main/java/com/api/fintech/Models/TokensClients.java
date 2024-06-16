@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 public class TokensClients {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_tokencli")
+    @SequenceGenerator(name = "seq_tokencli", sequenceName = "seq_tokencli", allocationSize = 1)
     @Column(name = "id")
     private Integer id;
 

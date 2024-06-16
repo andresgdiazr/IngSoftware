@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 public class DetRequirements {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_detrequirement")
+    @SequenceGenerator(name = "seq_detrequirement", sequenceName = "seq_detrequirement", allocationSize = 1)
     @Column(name = "id")
     private Integer id;
 

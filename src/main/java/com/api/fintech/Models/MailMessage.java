@@ -9,6 +9,8 @@ import lombok.Data;
 public class MailMessage {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_mail")
+    @SequenceGenerator(name = "seq_mail", sequenceName = "seq_mail", allocationSize = 1)
+
     @Column(name = "id")
     private Integer id;
 

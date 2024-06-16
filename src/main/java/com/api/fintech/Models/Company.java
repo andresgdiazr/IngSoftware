@@ -5,11 +5,11 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "companies", schema = "readOnlySchema")
+@Table(name = "companies")
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_company")
-//    @SequenceGenerator(name = "seq_company", sequenceName = "company_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "seq_company", sequenceName = "company_id_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "companies_id")

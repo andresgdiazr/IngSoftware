@@ -4,11 +4,11 @@ import jakarta.persistence.*;
 import lombok.Data;
     @Data
     @Entity
-    @Table(name = "client", schema = "readOnlySchema")
+    @Table(name = "client")
     public class Client {
         @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_client")
-//        @SequenceGenerator(name = "client_id_seq", sequenceName = "client_id_seq", allocationSize = 1)
+        @SequenceGenerator(name = "seq_client", sequenceName = "seq_client", allocationSize = 1)
         private Integer id;
         @Column(name = "location_id", nullable = false)
         private Integer locationId;
