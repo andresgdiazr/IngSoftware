@@ -4,14 +4,12 @@ import com.fintech.FintechApp.Models.Client;
 import com.fintech.FintechApp.Models.User;
 import com.fintech.FintechApp.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/user")
 public class UsersControllers {
     @Autowired
@@ -25,6 +23,7 @@ public class UsersControllers {
     }
     @GetMapping(value = "/welcome")
     public String welcome(){
-        return "Welcome from protected endPoint";
+
+        return "Saludos desde el backend";
     }
 }
