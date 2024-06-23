@@ -1,6 +1,6 @@
-package com.fintech.FintechApp.Repositories;
+package com.api.fintech.Repositories;
 
-import com.fintech.FintechApp.Models.User;
+import com.api.fintech.Models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

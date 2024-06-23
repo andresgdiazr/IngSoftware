@@ -1,6 +1,6 @@
-package com.fintech.FintechApp.Repositories;
+package com.api.fintech.Repositories;
 
-import com.fintech.FintechApp.Models.Client;
+import com.api.fintech.Models.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

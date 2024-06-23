@@ -1,8 +1,8 @@
-package com.fintech.FintechApp.Controllers;
+package com.api.fintech.Controllers;
 
-import com.fintech.FintechApp.Models.Client;
-import com.fintech.FintechApp.Models.User;
-import com.fintech.FintechApp.Repositories.UserRepository;
+import com.api.fintech.Models.Client;
+import com.api.fintech.Models.User;
+import com.api.fintech.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
