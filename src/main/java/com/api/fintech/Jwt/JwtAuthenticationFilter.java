@@ -1,6 +1,6 @@
-package com.fintech.FintechApp.Jwt;
+package com.api.fintech.Jwt;
 
-import com.fintech.FintechApp.Services.JwtService;
+import com.api.fintech.Services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

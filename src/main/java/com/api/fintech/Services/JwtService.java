@@ -1,6 +1,6 @@
-package com.fintech.FintechApp.Services;
+package com.api.fintech.Services;
 
-import com.fintech.FintechApp.Models.User;
+import com.api.fintech.Models.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -36,7 +36,7 @@ public class JwtService {
     }
 
     public Key getKey() {
-      byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
+        byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 

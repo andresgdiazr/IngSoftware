@@ -1,6 +1,6 @@
-package com.fintech.FintechApp.Config;
+package com.api.fintech.Config;
 
-import com.fintech.FintechApp.Jwt.JwtAuthenticationFilter;
+import com.api.fintech.Jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

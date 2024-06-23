@@ -1,4 +1,4 @@
-package com.fintech.FintechApp.Jwt;
+package com.api.fintech.Jwt;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

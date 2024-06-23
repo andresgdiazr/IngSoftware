@@ -1,4 +1,4 @@
-package com.fintech.FintechApp.Models;
+package com.api.fintech.Models;
 
 public enum Role {
     ADMIN,

@@ -1,15 +1,17 @@
-package com.fintech.FintechApp.Jwt;
+package com.api.fintech.Jwt;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
-public class LoginRequest {
+public class RegisterRequest {
+
+    String lastname;
     String username;
+    String cedula;
     String password;
+
 }

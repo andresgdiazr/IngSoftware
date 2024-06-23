@@ -1,4 +1,4 @@
-package com.fintech.FintechApp.Config;
+package com.api.fintech.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ public class WebConfig {
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:3000")
                         .allowedMethods(HttpMethod.GET.name()
-                        ,HttpMethod.POST.name(),
+                                ,HttpMethod.POST.name(),
                                 HttpMethod.DELETE.name())
                         .allowedHeaders(HttpHeaders.CONTENT_TYPE,
                                 HttpHeaders.AUTHORIZATION);

@@ -1,6 +1,6 @@
-package com.fintech.FintechApp.Config;
+package com.api.fintech.Config;
 
-import com.fintech.FintechApp.Repositories.UserRepository;
+import com.api.fintech.Repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
