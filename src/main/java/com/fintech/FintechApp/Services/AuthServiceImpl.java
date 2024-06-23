@@ -3,6 +3,7 @@ package com.fintech.FintechApp.Services;
 import com.fintech.FintechApp.Jwt.AuthResponse;
 import com.fintech.FintechApp.Jwt.LoginRequest;
 import com.fintech.FintechApp.Jwt.RegisterRequest;
+import com.fintech.FintechApp.Models.Role;
 import com.fintech.FintechApp.Models.User;
 import com.fintech.FintechApp.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,20 +28,22 @@ public class AuthServiceImpl implements AuthService{
     }
 
     public AuthResponse login(LoginRequest request) {
-     //  authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(),request.getPassword()));
-        User user = userRepository.findByName(request.getUsername()).orElseThrow();
-        String token = jwtService.getToken((User) user);
+       authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(),request.getPassword()));
+        UserDetails user = userRepository.findByName(request.getUsername()).orElseThrow();
+        String token = jwtService.getToken(user);
         return AuthResponse.builder()
                 .token(token).build();
+
     }
 
     public AuthResponse register(RegisterRequest request) {
 
         User user = User.builder()
-                .name(request.getName())
+                .username(request.getUsername())
                 .lastname(request.getLastname())
-                .pass(passwordEncoder.encode(request.getPass()))
+                .password(passwordEncoder.encode(request.getPassword()))
                 .cedula(request.getCedula())
+                .role(Role.USER)
                 .status("Activo")
                 .build();
             userRepository.save(user);

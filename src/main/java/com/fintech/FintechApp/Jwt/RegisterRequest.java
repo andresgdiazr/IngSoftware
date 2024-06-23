@@ -10,8 +10,8 @@ import lombok.Data;
 public class RegisterRequest {
 
      String lastname;
-     String name;
+     String username;
      String cedula;
-     String pass;
+     String password;
 
 }

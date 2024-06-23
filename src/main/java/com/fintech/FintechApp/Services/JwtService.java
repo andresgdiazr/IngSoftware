@@ -20,15 +20,15 @@ public class JwtService {
 
     private static final String SECRET_KEY="AAKSJKAHDJHDWEUIQUEQW343434H3J5HJHH2J32J32388WE8WE8WEWJJ22220099WI";
 
-    public String getToken(User user){
-        return getToken(new HashMap<>(),user);
+    public String getToken(UserDetails user){
+        return getToken( new HashMap<>(),user);
 
     }
 
-    private String getToken(Map<String,Object> extraClaims, User user) {
+    private String getToken(Map<String,Object> extraClaims, UserDetails user) {
         return Jwts.builder()
                 .setClaims(extraClaims)
-                .setSubject(user.getName())
+                .setSubject(user.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis()+1000*60*24))
                 .signWith(getKey(), SignatureAlgorithm.HS256)
@@ -56,7 +56,7 @@ public class JwtService {
                 .parser()
                 .setSigningKey(getKey())
                 .build()
-                .parseClaimsJwt(token)
+                .parseClaimsJws(token)
                 .getBody();
 
     }
