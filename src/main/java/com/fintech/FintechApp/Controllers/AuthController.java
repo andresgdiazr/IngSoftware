@@ -20,7 +20,7 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
-    @PostMapping( "/login")
+    @PostMapping( "login")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request){
         AuthResponse user =authService.login(request);
         return new ResponseEntity<>(user,HttpStatus.OK);
