@@ -2,7 +2,10 @@ package com.api.fintech.Models;
 
 import jakarta.persistence.*;
 import lombok.Data;
-    @Data
+
+import java.util.List;
+
+@Data
     @Entity
     @Table(name = "client")
     public class Client {
@@ -33,5 +36,8 @@ import lombok.Data;
 
         @Column(name = "status", length = 1)
         private String status;
+
+
     }
+
 

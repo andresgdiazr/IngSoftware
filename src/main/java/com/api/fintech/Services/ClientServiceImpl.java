@@ -1,8 +1,11 @@
 package com.api.fintech.Services;
 
+import com.api.fintech.Models.DetailsFinanced;
+import com.api.fintech.Repositories.DetailsFinancedRepository;
 import com.api.fintech.exceptions.ClientNotFoundException;
 import com.api.fintech.Models.Client;
 import com.api.fintech.Repositories.ClientRepository;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +13,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@NoArgsConstructor
 public class ClientServiceImpl implements IClientService {
 
     @Autowired
     private ClientRepository clientRepository;
+    @Autowired
+    private DetailsFinancedRepository detailsFinancedRepository;
 
     @Override
     public Client crearCliente(Client cliente) throws Exception {
@@ -44,6 +50,11 @@ public class ClientServiceImpl implements IClientService {
 
         clientRepository.save(cliente);
         return cliente;
+    }
+
+    @Override
+    public Optional<DetailsFinanced> detallesFinan(Long id) {
+        return detailsFinancedRepository.findByClientId(id);
     }
 
     @Override

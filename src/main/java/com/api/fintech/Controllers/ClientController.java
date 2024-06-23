@@ -63,4 +63,9 @@ public class ClientController {
         return new ResponseEntity<>(cliente,HttpStatus.OK);
     }
 
+    @GetMapping("/financiamientoDet/{id}")
+    public ResponseEntity<?> detalleFinamiento(@PathVariable Long id){
+        return ResponseEntity.ok("detalles");
+    }
+
 }
