@@ -27,11 +27,19 @@ public class AuthServiceImpl implements AuthService{
     }
 
     public AuthResponse login(LoginRequest request) {
-     //  authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(),request.getPassword()));
+       authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(),request.getPassword()));
         User user = userRepository.findByName(request.getUsername()).orElseThrow();
         String token = jwtService.getToken((User) user);
         return AuthResponse.builder()
                 .token(token).build();
+
+
+//        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
+//        UserDetails user=userRepository.findByUsername(request.getUsername()).orElseThrow();
+//        String token=jwtService.getToken(user);
+//        return AuthResponse.builder()
+//                .token(token)
+//                .build();
     }
 
     public AuthResponse register(RegisterRequest request) {
