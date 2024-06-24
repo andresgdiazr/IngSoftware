@@ -36,6 +36,7 @@ import java.util.List;
 
         @Column(name = "status", length = 1)
         private String status;
+        Role role;
 
 
     }

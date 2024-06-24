@@ -1,6 +1,7 @@
 package com.api.fintech.Services;
 
 import com.api.fintech.Models.DetailsFinanced;
+import com.api.fintech.Models.User;
 import com.api.fintech.Repositories.DetailsFinancedRepository;
 import com.api.fintech.exceptions.ClientNotFoundException;
 import com.api.fintech.Models.Client;
@@ -55,6 +56,11 @@ public class ClientServiceImpl implements IClientService {
     @Override
     public Optional<DetailsFinanced> detallesFinan(Long id) {
         return detailsFinancedRepository.findByClientId(id);
+    }
+
+    @Override
+    public Optional<Client> findByName(String name) {
+        return clientRepository.findByName(name);
     }
 
     @Override

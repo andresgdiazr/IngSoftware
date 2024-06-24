@@ -26,18 +26,13 @@ public class User implements UserDetails {
     @Column(name = "name", length = 20, nullable = false)
     private String username;
 
-    @Column(name = "lastname", length = 30, nullable = false)
-    private String lastName;
-
-    @Column(name = "cedula", length = 10, unique = true, nullable = false)
-    private String cedula;
-
     @Column(name = "pass", length = 100)
     private String password;
 
     @Column(name = "status", length = 10)
     private String status;
-    Role role;
+
+    private Role role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
