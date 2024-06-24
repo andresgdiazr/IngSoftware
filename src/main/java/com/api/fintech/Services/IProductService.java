@@ -10,6 +10,8 @@ public interface IProductService {
 
     Product createProduct(Product product) throws Exception;
 
+    Product findProductById(Long id);
+
     Product updateProduct(Product product) throws ProductNotFoundException, Exception;
 
     void deleteProduct(Long id) throws ProductNotFoundException, Exception;
