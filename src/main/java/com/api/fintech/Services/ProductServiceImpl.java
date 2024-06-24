@@ -31,6 +31,11 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
+    public Optional<Product> findProductById(Long id) {
+        return productRepository.findById(id);
+    }
+
+    @Override
     public Product updateProduct(Product product) throws ProductNotFoundException {
         // Check if product exists before updating
         Optional<Product> existingProduct = productRepository.findById(Long.valueOf(product.getId()));
