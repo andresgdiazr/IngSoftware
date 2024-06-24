@@ -23,8 +23,8 @@ public class CompanyServiceImpl implements ICompanyService {
     public Optional<Company> findByName(String name){ return companyRepository.findByName(name);}
     @Override
     public Company createCompany(Company company) throws Exception {
-        if (company.getName() == null || company.getRif() == null) {
-            throw new Exception("Required fields (name, rif) cannot be null");
+        if (company.getName() == null || company.getRif() == null || company.getCategoryCompsId() == null || company.getLocationId() == null) {
+            throw new Exception("Required fields (name, rif, categoryCompsId, locationId) cannot be null");
         }
 
         if (companyRepository.existsByRif(company.getRif())) {

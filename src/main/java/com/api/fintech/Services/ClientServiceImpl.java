@@ -26,8 +26,11 @@ public class ClientServiceImpl implements IClientService {
     public Client crearCliente(Client cliente) throws Exception {
         // Implement validation logic here (e.g., check for required fields)
 
-        clientRepository.save(cliente);
-        return cliente;
+        if (clientRepository.existsByCedula(cliente.getCedula())) {
+            throw new Exception("Client with cedula " + cliente.getCedula() + " already exists");
+        }
+
+        return clientRepository.save(cliente);
     }
 
     @Override

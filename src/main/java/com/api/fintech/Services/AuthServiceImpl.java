@@ -9,6 +9,7 @@ import com.api.fintech.Models.Role;
 import com.api.fintech.Models.User;
 import com.api.fintech.Repositories.CompanyRepository;
 import com.api.fintech.Repositories.UserRepository;
+import com.api.fintech.exceptions.CompanyNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -42,16 +43,23 @@ public class AuthServiceImpl implements AuthService{
     }
 
     public AuthResponse register(RegisterRequest request) {
+        Role userRole = switch (request.getRole().toUpperCase()) {
+            case "FINTECH" -> Role.FINTECH;
+            case "TIENDA" -> Role.TIENDA;
+            case "CLIENTE" -> Role.CLIENTE;
+            default -> null;
+        };
 
         User user = User.builder()
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(request.getRole())
+                .role(userRole)
                 .status("Activo")
                 .build();
         userRepository.save(user);
        return AuthResponse.builder()
                 .token(jwtService.getToken(user))
+               .role(userRole)
                 .build();
 
     }

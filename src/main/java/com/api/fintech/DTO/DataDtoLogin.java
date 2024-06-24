@@ -17,6 +17,11 @@ public class DataDtoLogin {
     String cedula;
     String status;
     Role role;
-
+    Integer companyId;
+    Integer locationId;
+    Integer categoryCompsId;
+    String rif;
+    String email;
+    String phone;
 
 }

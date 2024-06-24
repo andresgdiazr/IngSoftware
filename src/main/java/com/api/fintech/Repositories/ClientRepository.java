@@ -11,8 +11,11 @@ import java.util.Optional;
 @Repository
 public interface ClientRepository extends JpaRepository<Client,Long> {
 
-    @Query("SELECT u FROM User u WHERE u.username = ?1")
+    @Query("SELECT u FROM Client u WHERE u.name = ?1")
     Optional<Client> findByName(String name);
+
+    boolean existsByCedula(String cedula);
+
 
 
 }

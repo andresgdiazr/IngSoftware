@@ -14,7 +14,7 @@ public class RegisterRequest {
     String username;
     String cedula;
     String password;
-    Role role;
+    String role;
 
     Integer companyId; // Assuming "companies_id" refers to a self-referential relationship
     Integer locationId;
