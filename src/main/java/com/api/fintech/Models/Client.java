@@ -40,7 +40,7 @@ import java.util.List;
         @Column(name = "pass", length = 100)
         private String password; // Assuming "pass" refers to the client's password
 
-        @Column(name = "status", length = 1)
+        @Column(name = "status", length = 10)
         private String status;
         Role role;
 
